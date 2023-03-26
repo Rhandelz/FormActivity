@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="opt"></div>
+
+    <div class="main">
+      <form method="get" enctype="application/x-www-form-urlencoded" action=" ">
+        <!--INPUT-->
+        <div class="in" id="input">
+          <div>
+            <input type="text" name="customer_name" placeholder=" " required />
+            <label>Name </label>
+          </div>
+
+          <div>
+            <input type="tel" name="phone_number" placeholder=" " />
+            <label>Phone </label>
+          </div>
+
+          <div>
+            <input type="email" name="email_address" placeholder=" " />
+            <label>Email </label>
+          </div>
+
+          <a href="#rad">></a>
+        </div>
+
+        <!--RADIO-->
+        <div class="radio" id="rad">
+          <label
+            >Which <br />
+            taxi do you <br />require?</label
+          >
+          <div class="rad_opt">
+            <div>
+              <input type="radio" name="taxi" required value="car" />
+              <label> Car </label>
+            </div>
+            <div>
+              <input type="radio" name="taxi" required value="van" />
+              <label> Van </label>
+            </div>
+            <div>
+              <input type="radio" name="taxi" required value="tuktuk" />
+              <label> Tuk Tuk </label>
+            </div>
+            <a href="#boom">></a>
+            <a href="#input" class="prev">prev</a>
+          </div>
+        </div>
+
+        <!--CHCKBOX-->
+        <div id="boom" class="beng">
+          <label>Extras</label>
+          <div class="chk_div">
+            <div>
+              <input type="checkbox" name="extras" value="baby" />
+
+              <label> Baby Seat </label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="extras" value="wheelchair" />
+
+              <label> Wheelchair Access </label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="extras" value="tip" />
+
+              <label> Stock Tip </label>
+            </div>
+          </div>
+          <a href="#t"> > </a>
+          <a href="#rad" class="prev">prev</a>
+        </div>
+
+        <!--datetime etc.-->
+        <div class="date" id="t">
+          <div class="contain">
+            <div>
+              <label>Pickup Date/Time </label>
+              <input type="datetime-local" name="pickup_time" required />
+            </div>
+
+            <div>
+              <label>Pickup Place </label>
+              <select id="pickup_place" name="pickup_place">
+                <option value="" selected="selected">Select One</option>
+                <option value="office">Taxi Office</option>
+                <option value="town_hall">Town Hall</option>
+                <option value="telepathy">We'll Guess!</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Dropoff Place</label>
+              <input
+                type="text"
+                name="dropoff_place"
+                required
+                list="destinations"
+              />
+
+              <datalist id="destinations">
+                <option value="Airport"></option>
+                <option value="Beach"></option>
+                <option value="Fred Flinstone's House"></option>
+              </datalist>
+            </div>
+
+            <div>
+              <label>Special Instructions </label>
+              <textarea name="comments" maxlength="500"></textarea>
+            </div>
+          </div>
+          <a href="#boom" class="prev"> prev </a>
+        </div>
+
+        <div><button>Submit Booking</button></div>
+      </form>
+    </div>
+    <script>
+      console.log(document.querySelector("body").clientWidth);
+      console.log(document.querySelector(".main").clientWidth);
+    </script>
+  </body>
+</html>

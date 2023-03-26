@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Teko:wght@300;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    219deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(57, 57, 185, 1) 40%,
+    rgba(0, 212, 255, 1) 90%
+  );
+}
+
+.main {
+  height: 400px;
+  width: 554px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+  scroll-behavior: smooth;
+  border: 1px solid black;
+}
+
+form {
+  position: absolute;
+  height: 400px;
+  /* width: 1366px; */
+  display: flex;
+  flex-direction: row;
+
+  border-radius: 7px;
+}
+
+.in,
+.date,
+.beng,
+.radio {
+  height: 100%;
+  width: 562px;
+  /*   border: 1px solid black */
+  position: relative;
+}
+
+/* INPUT CSS*/
+
+.in {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background: white;
+}
+
+.in > div {
+  position: relative;
+  margin-top: 50px;
+}
+
+.in > div > input {
+  height: 35px;
+  font-size: 15px;
+  padding-left: 10px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  /*   border: 0.5px solid black; */
+  border: none;
+  background-color: rgb(234, 234, 234);
+  box-shadow: 1px 1px 5px gray;
+}
+
+.in > div > label {
+  position: absolute;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgb(150, 149, 152);
+  top: 20%;
+  left: 10%;
+  font-size: 0.8rem;
+}
+.in > div > input:focus {
+  outline: none;
+  background-color: rgb(204, 201, 207);
+  box-shadow: none;
+}
+.in > div > input:focus ~ label {
+  top: -50%;
+  color: rgb(169, 167, 172);
+}
+.in > div > input:not(:placeholder-shown) ~ label {
+  top: -50%;
+  color: rgb(169, 167, 172);
+}
+
+.in > a[href*="rad"] {
+  margin-top: 40px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: gray;
+  position: relative;
+  transition: 0.2s;
+}
+
+.in > a[href*="rad"]::after {
+  content: ">";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s;
+}
+
+.in > a[href*="rad"]:hover {
+  color: rgb(24, 9, 181);
+  transform: translateX(-10px);
+  animation: blink 2s infinite;
+}
+
+.in > a[href*="rad"]:hover::after {
+  color: rgb(24, 9, 181);
+  left: 20px;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.5;
+  }
+  35% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/*radio css*/
+.radio {
+  display: flex;
+  background-color: white;
+}
+
+.radio > label {
+  width: 65%;
+  letter-spacing: 4px;
+  font-size: 4rem;
+  font-family: "Teko", sans-serif;
+  font-weight: 700;
+  line-height: 65px;
+  margin-top: 20%;
+  margin-left: 10px;
+  text-align: left;
+  color: transparent;
+  background: linear-gradient(
+    219deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(57, 57, 185, 1) 40%,
+    rgba(0, 212, 255, 1) 90%
+  );
+  -webkit-background-clip: text;
+}
+
+.radio > .rad_opt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*   align-items: center; */
+  padding-top: 80px;
+  gap: 10px;
+}
+
+.radio > .rad_opt > div {
+  margin-left: 20px;
+}
+
+.radio > .rad_opt > div > label {
+  margin-left: 10px;
+  font-family: "Poppins", sans-serif;
+  /*   font-weight: 700 */
+  font-size: 0.8rem;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+.radio > .rad_opt > div > label::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0, 195, 255);
+  height: 1px;
+  width: 0;
+  transition: 0.5s;
+}
+
+.radio > .rad_opt > div > input:checked ~ label {
+  color: blue;
+}
+
+.radio > .rad_opt > div > input:checked ~ label::after {
+  width: 100%;
+}
+
+.radio > div > a[href*="boom"] {
+  margin-top: 40px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: gray;
+  position: relative;
+  transition: 0.2s;
+  margin-left: 50px;
+  margin-top: 70px;
+}
+
+.radio > div > a[href*="boom"]::after {
+  content: ">";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s;
+}
+
+.radio > div > a[href*="boom"]:hover {
+  color: rgb(24, 9, 181);
+  transform: translateX(-10px);
+  animation: blink 2s infinite;
+}
+
+.radio > div > a[href*="boom"]:hover::after {
+  color: rgb(24, 9, 181);
+  left: 20px;
+  animation: blink 2s infinite;
+}
+
+/* checkbox css*/
+.beng {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.beng > label {
+  font-size: 4rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+  color: gray;
+  color: transparent;
+  background: linear-gradient(
+    219deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(57, 57, 185, 1) 40%,
+    rgba(0, 212, 255, 1) 90%
+  );
+  -webkit-background-clip: text;
+}
+
+.beng > .chk_div {
+  display: flex;
+  flex-direction: column;
+  /*   background-color: aqua; */
+}
+.beng > .chk_div > div {
+  margin-bottom: 10px;
+  display: flex;
+}
+/*.fill is also the div next to .chk_div*/
+.fill {
+  /*   background-color: rgba(0, 112, 0, 0.209); */
+  height: 25px;
+  position: relative;
+}
+
+.fill_in {
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  width: 70%;
+  background-color: green;
+  z-index: -1;
+  height: 70%;
+  transition: 0.2s;
+}
+
+.beng > .chk_div > label {
+  font-family: "Poppins", sans-serif;
+}
+
+.beng > .chk_div > div > input {
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-top: none;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  position: relative;
+  border: 1px gray solid;
+  margin-right: 10px;
+  transition-delay: 0.5s;
+}
+
+.beng > .chk_div > div > input:checked {
+  animation: circle 0.27s forwards;
+  outline: 4px solid rgb(255, 255, 255);
+  outline-offset: -6.5px;
+  background-color: rgb(0, 255, 0);
+}
+
+.beng > .chk_div > div > input ~ label {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: gray;
+}
+.beng > .chk_div > div > input:checked ~ label {
+  color: rgb(0, 255, 0);
+}
+
+@keyframes circle {
+  0% {
+    border-bottom: 2px solid rgb(0, 255, 0);
+  }
+  35% {
+    border-left: 2px solid rgb(0, 255, 0);
+    border-bottom: 2px solid rgb(0, 255, 0);
+  }
+  75% {
+    border-top: 2px solid rgb(0, 255, 0);
+    border-left: 2px solid rgb(0, 255, 0);
+    border-bottom: 2px solid rgb(0, 255, 0);
+  }
+  100% {
+    border-right: 2px solid rgb(0, 255, 0);
+    border-top: 2px solid rgb(0, 255, 0);
+    border-left: 2px solid rgb(0, 255, 0);
+    border-bottom: 2px solid rgb(0, 255, 0);
+  }
+}
+
+.beng > a[href*="t"] {
+  margin-top: 40px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: gray;
+  position: relative;
+  transition: 0.2s;
+}
+
+.beng > a[href*="t"]::after {
+  content: ">";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s;
+}
+
+.beng > a[href*="t"]:hover {
+  color: rgb(24, 9, 181);
+  transform: translateX(-10px);
+  animation: blink 2s infinite;
+}
+
+.beng > a[href*="t"]:hover::after {
+  color: rgb(24, 9, 181);
+  left: 20px;
+  animation: blink 2s infinite;
+}
+
+/*date time css*/
+.date {
+  background-color: white;
+}
+.contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70%;
+}
+.contain > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contain > div:nth-child(1):hover input {
+  width: 40%;
+  background-color: rgb(233, 233, 233);
+}
+
+.contain > div:nth-child(1) > input {
+  border-radius: 10px;
+  border: none;
+  /* background-color: rgb(211, 211, 211); */
+  padding: 5px 10px;
+  font-family: "Poppin", sans-serif;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  border: 1px solid gray;
+  width: 0%;
+}
+.contain > div:nth-child(1) > input:focus {
+  border: none;
+  background-color: rgb(209, 209, 209);
+  outline: 1px solid rgb(99, 99, 187);
+}
+
+.contain > div:nth-child(2) > select {
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-family: "Poppins", sans-serif;
+}
+.contain > div:nth-child(2) > select:focus {
+  outline: 1px solid rgb(99, 99, 187);
+  border: none;
+  color: blue;
+}
+
+.contain > div:nth-child(2) > select:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.contain > div:nth-child(2) > select > option {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.contain > div:nth-child(3):hover input {
+  width: 25%;
+}
+
+.contain > div:nth-child(3) > input {
+  border-radius: 10px;
+  border: none;
+  /* background-color: rgb(211, 211, 211); */
+  padding: 5px 10px;
+  font-family: "Poppin", sans-serif;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  border: 1px solid gray;
+  width: 16%;
+}
+
+.contain > div:nth-child(3) > input:focus {
+  border: none;
+  background-color: rgb(209, 209, 209);
+  outline: 1px solid rgb(99, 99, 187);
+}
+
+.contain > div:nth-child(4) > textarea {
+  border: none;
+  /* background-color: rgb(211, 211, 211); */
+  padding: 5px 10px;
+  font-family: "Poppin", sans-serif;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  height: 0%;
+  border: 1px solid gray;
+}
+
+.contain > div:nth-child(4) > textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.contain > div:nth-child(4) > textarea:focus {
+  box-shadow: 1px 1px 5px gray;
+  background-color: rgb(209, 209, 209);
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  height: 90%;
+}
+
+.contain > div > label {
+  color: gray;
+  margin-right: 10px;
+}
+
+.contain > div:hover label {
+  color: transparent;
+  background: linear-gradient(
+    219deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(57, 57, 185, 1) 40%,
+    rgba(0, 212, 255, 1) 90%
+  );
+  -webkit-background-clip: text;
+}
+
+/*Button Css*/
+
+button {
+  position: absolute;
+  background: rgb(44, 185, 237);
+  z-index: 99;
+  border: none;
+  right: 8.5%;
+  bottom: 15%;
+  padding: 7px 5px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.7;
+  font-weight: bold;
+  color: rgb(253, 253, 253);
+  box-shadow: #449cc2 0px 7px 2px, #000 0px 8px 10px;
+}
+button:hover {
+  opacity: 1;
+}
+button:active {
+  bottom: 14%;
+  box-shadow: #449cc2 0px 2px 2px, #000 0px 2px 5px;
+}
+
+/*prevois  css */
+.prev {
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  left: 10px;
+  bottom: 10px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.5s;
+  color: gray;
+}
+
+.prev:hover {
+  color: blue;
+}
